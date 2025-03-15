@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pacientes - Hospital Alt</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="img/logo-alt.png" alt="Hospital Alt">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Quiénes Somos</a></li>
+                <li><a href="servicios.html">Servicios Médicos</a></li>
+                <li><a href="synthesis_academy.html">Synthesis Academy</a></li>
+                <li><a href="gestion_pacientes.html">Gestión de Pacientes</a></li>
+                <li><a href="medicos.html">Médicos</a></li>
+                <li><a href="equipos.html">Equipos</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Gestión de Pacientes</h1>
+
+        <!-- Formulario para agregar/editar pacientes -->
+        <section class="form-section">
+            <h2>Agregar/Editar Paciente</h2>
+            <form id="paciente-form">
+                <input type="hidden" name="id_paciente">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido1">Primer Apellido:</label>
+                    <input type="text" id="apellido1" name="apellido1" placeholder="Primer Apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido2">Segundo Apellido:</label>
+                    <input type="text" id="apellido2" name="apellido2" placeholder="Segundo Apellido">
+                </div>
+                <div class="form-group">
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni" name="dni" placeholder="DNI" required>
+                </div>
+                <div class="form-group">
+                    <label for="tlf">Teléfono:</label>
+                    <input type="text" id="tlf" name="tlf" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <label for="poliza">Número de Póliza:</label>
+                    <input type="text" id="poliza" name="poliza" placeholder="Número de Póliza" required>
+                </div>
+                <div class="form-group">
+                    <label for="biometricos">Datos Biométricos:</label>
+                    <textarea id="biometricos" name="biometricos" placeholder="Datos Biométricos"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado" required>
+                        <option value="alta">Alta</option>
+                        <option value="ingresado">Ingresado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="implante">Implante:</label>
+                    <input type="text" id="implante" name="implante" placeholder="Implante">
+                </div>
+                <button type="submit">Guardar</button>
+            </form>
+        </section>
+
+        <!-- Lista de pacientes -->
+        <section class="list-section">
+            <h2>Lista de Pacientes</h2>
+            <div id="pacientes-list" class="grid"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 Hospital Alt. Todos los derechos reservados</p>
+            <div class="footer-links">
+                <a href="about.html">Quiénes Somos</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="synthesis_academy.html">Synthesis Academy</a>
+                <a href="#">Política de Privacidad</a>
+            </div>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
