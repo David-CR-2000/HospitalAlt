@@ -1051,6 +1051,54 @@ button[type="submit"]:hover {
     }
 }
 
+/* Estilos para la nueva sección de la aseguradora "Alt-Salud" */
+.insurance-section {
+    padding: 4rem 5%;
+    background: #ffffff;
+    text-align: center;
+    margin: 2rem 0; /* Márgenes arriba y abajo */
+}
+
+.insurance-section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-align: center; /* Centrar el título */
+}
+
+.insurance-section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.insurance-section .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #3498db;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.insurance-section .cta-button:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.insurance-section .cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 /* Responsive */
 .hamburger {
