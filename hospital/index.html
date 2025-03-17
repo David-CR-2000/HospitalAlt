@@ -66,6 +66,75 @@
         </div>
     </section>
 
+    <!-- Burbuja de Chat IA -->
+    <div class="chat-container">
+        <div class="chat-bubble" onclick="toggleChat()">
+            <img src="img/chat-icon.png" alt="Chat IA" class="chat-icon">
+        </div>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Asistente Médico Virtual</h3>
+                <button class="close-btn" onclick="toggleChat()">×</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    ¡Hola! Soy AltBot, tu asistente médico. ¿En qué puedo ayudarte hoy?
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Escribe tu pregunta...">
+                <button onclick="sendMessage()" class="send-btn">
+                    <img src="img/send-icon.png" alt="Enviar">
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Añadir esto dentro de la sección equipment-section -->
+    <div class="equipment-card bionic-arm-card">
+        <h3>Brazo Biónico NeuroTáctil</h3>
+        <div class="tech-features">
+            <div class="feature-item">
+                <i class="fas fa-brain icon"></i>
+                <h4>Control Mental</h4>
+                <p>Interfaz cerebro-máquina con EEG avanzado para control intuitivo</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-hand-paper icon"></i>
+                <h4>Tacto Digital</h4>
+                <p>Sensores Digit 360 con resolución de 0.2mm y rango de 0-30N</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-microchip icon"></i>
+                <h4>IA Integrada</h4>
+                <p>Redes neuronales profundas para retroalimentación táctil en tiempo real</p>
+            </div>
+        </div>
+        
+        <div class="tech-specs">
+            <h4>Características Clave:</h4>
+            <ul class="spec-list">
+                <li><i class="fas fa-fingerprint"></i> Resolución táctil: 4000 puntos/cm²</li>
+                <li><i class="fas fa-tachometer-alt"></i> Latencia: <2ms</li>
+                <li><i class="fas fa-temperature-high"></i> Rango térmico: 0-100°C</li>
+                <li><i class="fas fa-weight-hanging"></i> Capacidad carga: 15kg</li>
+            </ul>
+        </div>
+        
+        <div class="applications">
+            <h4>Aplicaciones Médicas:</h4>
+            <div class="app-grid">
+                <span class="app-tag">Neuroprótesis</span>
+                <span class="app-tag">Cirugía de precisión</span>
+                <span class="app-tag">Rehabilitación</span>
+                <span class="app-tag">Telemedicina</span>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-content">
             <p>© 2024 Hospital Alt. Todos los derechos reservados</p>

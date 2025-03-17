@@ -201,3 +201,64 @@ function appendMessage(sender, text) {
     messageDiv.textContent = text;
     document.querySelector('.chat-messages').appendChild(messageDiv);
 }
+
+// Toggle del chat
+function toggleChat() {
+    const chatWindow = document.getElementById('chatWindow');
+    chatWindow.classList.toggle('active');
+}
+
+// Enviar mensaje
+async function sendMessage() {
+    const userInput = document.getElementById('userInput');
+    const chatMessages = document.getElementById('chatMessages');
+    
+    if (userInput.value.trim() === '') return;
+
+    // Mostrar mensaje del usuario
+    const userMessage = document.createElement('div');
+    userMessage.className = 'message user';
+    userMessage.textContent = userInput.value;
+    chatMessages.appendChild(userMessage);
+
+    // Mostrar carga
+    const loading = document.createElement('div');
+    loading.className = 'message bot';
+    loading.textContent = 'Pensando...';
+    chatMessages.appendChild(loading);
+
+    try {
+        // Llamada a la API
+        const response = await fetch('http://localhost:3000/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: userInput.value })
+        });
+
+        const data = await response.json();
+        
+        // Eliminar carga y mostrar respuesta
+        chatMessages.removeChild(loading);
+        const botMessage = document.createElement('div');
+        botMessage.className = 'message bot';
+        botMessage.textContent = data.response;
+        chatMessages.appendChild(botMessage);
+
+    } catch (error) {
+        console.error('Error:', error);
+        chatMessages.removeChild(loading);
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'message bot error';
+        errorMessage.textContent = 'Disculpa, hubo un error. Intenta de nuevo.';
+        chatMessages.appendChild(errorMessage);
+    }
+
+    // Scroll al final y limpiar input
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    userInput.value = '';
+}
+
+// Enviar con Enter
+document.getElementById('userInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+});

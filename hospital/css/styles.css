@@ -128,6 +128,228 @@ body.page-equipos .equipo-card p {
     }
 }
 
+/* Añadir al CSS existente */
+.bionic-arm-card {
+    border-left: 4px solid #2ecc71;
+    position: relative;
+    overflow: hidden;
+}
+
+.bionic-arm-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(46,204,113,0.1) 0%, rgba(52,152,219,0.05) 100%);
+    z-index: 0;
+}
+
+.tech-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 1;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #2ecc71;
+    margin-bottom: 1rem;
+}
+
+.tech-specs {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+.spec-list {
+    columns: 2;
+    list-style: none;
+    padding: 0;
+}
+
+.spec-list li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.applications {
+    border-top: 2px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.app-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.app-tag {
+    background: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .spec-list {
+        columns: 1;
+    }
+    
+    .tech-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos del Chat IA */
+.chat-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.chat-bubble {
+    width: 60px;
+    height: 60px;
+    background: #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.chat-bubble:hover {
+    transform: scale(1.1);
+}
+
+.chat-icon {
+    width: 30px;
+    filter: invert(1);
+}
+
+.chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+}
+
+.chat-window.active {
+    display: flex;
+}
+
+.chat-header {
+    padding: 1rem;
+    background: #2c3e50;
+    color: white;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+.message {
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.message.user {
+    background: #3498db;
+    color: white;
+    margin-left: auto;
+}
+
+.message.bot {
+    background: #e0e0e0;
+    margin-right: auto;
+}
+
+.chat-input {
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.send-btn {
+    background: #3498db;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.send-btn img {
+    width: 20px;
+    filter: invert(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .chat-container {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .chat-window {
+        width: 90vw;
+        right: 5vw;
+        bottom: 70px;
+    }
+}
+
 /* Estilos para el botón de llamada a la acción (CTA) */
 .cta-button {
     display: inline-block;
@@ -204,6 +426,80 @@ body.page-equipos .equipo-card p {
 .nav-links a:hover {
     color: #3498db;
 }
+
+
+/* Historia del Hospital */
+.history-section {
+    padding: 4rem 5%;
+    background: #f8f9fa;
+}
+
+.history-timeline {
+    display: grid;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.timeline-card {
+    background: white;
+    padding: 2rem;
+    border-left: 4px solid #2ecc71;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #2ecc71;
+    border-radius: 50%;
+}
+
+.current-era {
+    border-color: #3498db;
+}
+
+.current-era::before {
+    background: #3498db;
+}
+
+.awards {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.award {
+    text-align: center;
+}
+
+.award img {
+    width: 60px;
+    margin-bottom: 0.5rem;
+}
+
+.founder-quote {
+    margin: 3rem auto;
+    padding: 2rem;
+    border-left: 3px solid #3498db;
+    background: #f8f9fa;
+    font-style: italic;
+    max-width: 800px;
+}
+
+.founder-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+
 
 /* Hero Section */
 .hero {
